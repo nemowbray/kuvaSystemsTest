@@ -1,0 +1,17 @@
+{
+    "ts-node": {
+      "transpileOnly": true
+    },
+    "compilerOptions": {
+      "baseUrl": "./", // With "baseUrl": "./", TypeScript will look for files starting at the same folder as the tsconfig.json
+      "target": "ESNext",
+      "module": "CommonJS",
+      "strict": true,
+      "resolveJsonModule": true,
+      "sourceMap": true,
+      "paths": {
+        "@pages/*": ["pages/*"]
+      }
+    },
+    "exclude": ["node_modules"]
+  }

@@ -1,0 +1,17 @@
+{
+  "name": "kuvasystemstest",
+  "version": "1.0.0",
+  "description": "test the sign-up functionality for a social network",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0"
+  },
+  "dependencies": {
+    "add": "^2.0.6",
+    "dotenv": "^16.0.3",
+    "process-env": "^2.0.2"
+  }
+}

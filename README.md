@@ -16,6 +16,15 @@ This project will include testing for a social network that will include functio
 - Node.js is installed
 - Git is installed 
 
+## Technologies
+
+---
+
+A list of technologies used within the project:
+
+- [@playwright/test]: Version 1.17.2
+- [playwright]: Version 1.28.0
+
 # Install Playwright
 
 ---
@@ -25,15 +34,6 @@ npm init playwright@latest
 Note: If you install playwright after pulling the code into VS Code you will need to restart VS Code in order for VS Code to recognize the playwright install
 
 For more information on playwright documentation you can go to https://playwright.dev/docs/intro
-
-## Technologies
-
----
-
-A list of technologies used within the project:
-
-- [@playwright/test]: Version 1.17.2
-- [playwright]: Version 1.28.0
 
 ## Installation
 
@@ -49,7 +49,7 @@ You will be prompted with a series of questions:
   - press enter
   - press enter
   - press enter
-Note: you can ignore the e2e folder and tests-examples folder, these are automatically added during the install.
+Note: you can ignore the e2e folder, these are automatically added during the install.
 ```
 # NPX Commands
 
