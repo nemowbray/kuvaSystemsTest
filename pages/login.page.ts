@@ -1,21 +1,26 @@
 import { Locator, Page } from "@playwright/test";
 
-export default class registerUser {
+export default class loginOrRegisterUser {
 readonly page:Page;
-readonly registerButton: Locator;
-readonly emailAddress: Locator;
+readonly createAccountButton: Locator;
+readonly createAccountEmailAddress: Locator;
+readonly registeredEmailAddress: Locator;
 readonly password: Locator;
-readonly rememberMeCheckbox: Locator;
 readonly forgotPasswordLink: Locator;
-readonly loginButton: Locator;
+readonly signInButton: Locator;
+readonly invalidEmailAddress: Locator;
+readonly invalidPassword: Locator;
 
 constructor(page:Page) {
     this.page = page;
-    this.registerButton = page.getByRole('button', { name: 'Register' });
-    this.emailAddress = page.getByLabel('Email:');
-    this.password = page.getByLabel('Password:');
-    this.rememberMeCheckbox = page.getByLabel('Remember me?');
-    this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot password?' });
-    this.loginButton = page.getByRole('button', { name: 'Log in' });
+    this.createAccountButton = page.getByRole('button', { name: 'Create an account'});
+    this.createAccountEmailAddress = page.locator('#email_create');
+    this.registeredEmailAddress = page.locator('#email');
+    this.password = page.getByLabel('Password');
+    this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot your password?' });
+    this.createAccountButton = page.getByRole('button', { name: 'Create an account'})
+    this.signInButton = page.getByRole('button', { name: 'Sign in' });
+    this.invalidEmailAddress = page.locator('#create_account_error');
+    this.invalidPassword = page.locator('#center_column > div.alert.alert-danger');
 }
 }

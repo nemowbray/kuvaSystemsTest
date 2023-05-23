@@ -2,35 +2,42 @@ import { Locator, Page } from "@playwright/test";
 
 export default class registerUser {
 readonly page: Page;
-readonly gender: Locator;
+readonly title: Locator;
 readonly firstName: Locator;
 readonly lastName: Locator;
 readonly dateOfBirthDate: Locator;
 readonly dateOfBirthMonth: Locator;
 readonly dateOfBirthYear: Locator;
 readonly emailAddress: Locator;
-readonly companyName: Locator;
-readonly receiveNewsletter: Locator;
 readonly password: Locator;
-readonly confirmPassword: Locator;
 readonly registerButton: Locator;
-readonly continueButton: Locator;
+readonly newsletterCheckbox: Locator;
+readonly specialOffersCheckbox: Locator;
 
 constructor(page:Page) {
     this.page = page;
-    this.gender = page.getByLabel('Male');
-    this.firstName = page.getByLabel('First name:', {exact: true});
-    this.lastName = page.getByLabel('Last name:', {exact: true});
-    this.dateOfBirthDate = page.locator('select[name="DateOfBirthDay"]');
-    this.dateOfBirthMonth = page.locator('select[name="DateOfBirthMonth"]');
-    this.dateOfBirthYear = page.locator('select[name="DateOfBirthYear"]');
-    this.emailAddress = page.getByLabel('Email:', {exact: true});
-    this.companyName = page.getByLabel('Company name:', {exact: true});
-    this.receiveNewsletter = page.getByLabel('Newsletter:', {exact: true});
-    this.password = page.getByLabel('Password:', { exact: true });
-    this.confirmPassword = page.getByLabel('Confirm password:', {exact:true});
+    this.title = page.getByLabel('Mr.');
+    this.firstName = page.getByLabel('First name *');
+    this.lastName = page.getByLabel('Last name *');
+    this.emailAddress = page.getByLabel('Email *');
+    this.password = page.getByLabel('Password *');
+    this.dateOfBirthDate = page.locator('select[name="days"]');
+    this.dateOfBirthMonth = page.locator('select[name="months"]');
+    this.dateOfBirthYear = page.locator('select[name="years"]');
+    this.newsletterCheckbox = page.getByLabel('Sign up for our newsletter!');
+    this.specialOffersCheckbox = page.getByLabel('Receive special offers from our partners!');
     this.registerButton = page.getByRole('button', { name: 'Register' });
-    this.continueButton = page.getByRole('link', { name: 'Continue' })
-
+}
+async submitRegistrationForm (pass: string) {
+    await this.title.check();
+    await this.firstName.fill('tester');
+    await this.lastName.fill('testing');
+    await this.password.fill(pass);
+    await this.dateOfBirthDate.selectOption('17');
+    await this.dateOfBirthMonth.selectOption('11');
+    await this.dateOfBirthYear.selectOption('1980');
+    await this.newsletterCheckbox.check();
+    await this.specialOffersCheckbox.check();
+    await this.registerButton.click();
 }
 }

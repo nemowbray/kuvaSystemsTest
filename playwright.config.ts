@@ -31,6 +31,7 @@ const config: PlaywrightTestConfig = {
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   use: {
+    testIdAttribute: 'data-validate',
     headless: false,
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: process.env.URL,

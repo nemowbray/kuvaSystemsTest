@@ -1,0 +1,15 @@
+Email fields in the login page are not unique 
+    As a automation tester we need a better way to locate these elements, one option would be to add data-testId="email_create" for create account section and data-testId="email" for the sign in section.
+
+Registration page doesnt ask to confirm password
+    For users it better to have a confirm password field in the registration page in case they accidentally type a character they didn't think they typed.
+    I would recommend to add this field directly under the password field 
+
+Registration page password complexity
+    For security purposes we should change the requirements for a password from to have 5 characters to have the following: 8-16 characters, One upper case, One lower case, One number, One special character, password cannot contain more than 2 repeated characters.  In additon we should have a visual queue to show the user how strong the password is.
+
+Date of birth drop downs
+    As a automation tester we need a better way to locate these elements, one option would be to add data-testId="day", data-testId="month", data-testId="year". 
+
+User can't delete Acoount
+    As a user there should be a way to deactivate or remove account, I would recommend in the my account page there should be an new button under My personal information button called Deactivate Account.
