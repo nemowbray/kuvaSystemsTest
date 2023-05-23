@@ -13,3 +13,18 @@ Date of birth drop downs
 
 User can't delete Acoount
     As a user there should be a way to deactivate or remove account, I would recommend in the my account page there should be an new button under My personal information button called Deactivate Account.
+
+User can't reset password
+    As a user I should be able to reset my password
+    When a user attempts to reset their password they get an error message: An error occured while sending the email
+
+    Steps to Reproduce:
+    1. Go to landing page http://automationpractice.pl/index.php
+    2. Click SignIn
+    3. Click Forgot Password link 
+    4. User is directed to forgot your password page
+    5. Enter an email address that exists in the field provided
+    6. Click Retrieve Password button
+
+    Expected Result: Email is sent and there is a message on the page that the email is sent with a green banner
+    Actual Result: There is a Red banner indicating there was an error on the page with an error message: An error occurred while sending the email.    
