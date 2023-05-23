@@ -1,14 +1,12 @@
 import resetPassword from '@pages/forgotPassword.page';
 import landingPage from '@pages/landingPage.page';
 import loginOrRegisterUser from '@pages/login.page';
-import userAccount from '@pages/myAccount.page';
 import { test, expect, Page } from '@playwright/test';
 
 let page: Page;
 let homePage: landingPage;
 let login: loginOrRegisterUser;
 let forgotPassword: resetPassword;
-let myAccount: userAccount;
 
 test('User Can login', async ({ browser }) => {
   page = await browser.newPage();
